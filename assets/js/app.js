@@ -68,32 +68,36 @@ function validateForm(){
 function SendDataToWoopra() {
 	woopra.identify({
 		email: document.getElementById('f_email').value,
-		name: document.getElementById('f_prenom').value + document.getElementById('f_name').value,
+		name: document.getElementById('f_prenom').value + " " + document.getElementById('f_name').value,
+		firstname: document.getElementById('f_prenom').value,
+		lastname: document.getElementById('f_name').value,
 		phone: document.getElementById('f_tel').value
 	});
 
-	var check = "";
+	var optin = "";
 	if(document.getElementById('f_check').checked == true)
-		check = "non";
+		optin = "non";
 	else
-		check = "oui";
+		optin = "oui";
 
 	woopra.track("inscription", {
-		check: check,
+		optin: optin,
 		url: document.location.href,
 		title: document.title,
-		origin: "Enquete 2016"
+		origine: "Enquete 2016"
 	});
 
 	var p = extractUrlParams();
 
 	if ('canal' in p) {
 		woopra.track("survey_2016", {
-			canal: "orixa"
+			canal: "orixa",
+			optin: optin
 		});
 	}
 	else {woopra.track("survey_2016", {
-		canal: "bdd"
+		canal: "bdd",
+		optin: optin
 	});
 }
 }
