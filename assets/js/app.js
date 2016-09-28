@@ -54,15 +54,16 @@ function validateForm(){
 	display_results();
 
 	$('#footer').css({"display": "block"});
-	$("#see_result").parent().parent().parent().parent().parent().next().css({"display" : "block"});
-	$("#see_result").parent().parent().parent().parent().parent().next().next().css({"display" : "block"});
-	padding = ($(".slide-end-1").parent().height() - (($(".slide-end-1").first().height() + $(".slide-end-1").last().height()))) / 2;
-	$(".slide-end-1").first().css({"padding-top" : padding});
-	vertical_center($("#see_result").parent().parent().parent().parent().parent().next().find(".question_container"));
-	vertical_center($("#see_result").parent().parent().parent().parent().parent().next().next().find(".question_container"));
-	scrollTo($("#see_result").parent().parent().parent().parent().parent().next());
 	SendDataToWoopra();
+	FadeOutFormSlide();
 };
+
+function FadeOutFormSlide() {
+	$( "#slide-end-form" ).fadeOut( "slow", function() {''
+		$( ".slide-end-1" ).fadeIn( "slow", function() {
+		});
+	});
+}
 
 
 function SendDataToWoopra() {
@@ -152,7 +153,6 @@ function	get_results()
 	$(".selected").each(function(){
 		type[$(this).attr("value")] += 1;
 	});
-	console.log(type[0] + ' ' + type[1] + ' ' + type[2] + ' ' + type[3]);
 	return (getMaxTableau(type));
 }
 
