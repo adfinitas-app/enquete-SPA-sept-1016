@@ -191,12 +191,12 @@ function formToDb() {
 			"lastname": $('#f_name').val(),
 			"phone": $('f_tel').val(),
 			"canal": canal,
-			"optin": optin
+			"optin": optin,
 			"q1": q[0],
 			"q2": q[1],
 			"q3": q[2],
 			"q4": q[3],
-			"q5": q[4],
+			"q5": q[4]
 		}
 	}
 	console.log("before MakeCors" + data);
