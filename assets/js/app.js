@@ -36,7 +36,6 @@ return xhr;
 }
 
 function makeCorsRequest(data) {
-	console.log(JSON.stringify("in MakeCors" + data));
 	var url = 'https://form-to-db.herokuapp.com/';
 	var body = JSON.stringify(data);
 	var xhr = createCORSRequest('POST', url);
@@ -44,13 +43,11 @@ function makeCorsRequest(data) {
 		alert('CORS not supported');
 		return;
 	}
-	console.log(JSON.stringify("in middle MakeCors" + data));
 	xhr.setRequestHeader('Content-Type', 'application/json');
   // Error Handler
   xhr.onerror = function() {
   	alert('Woops, there was an error making the request.');
   };
-  console.log(JSON.stringify("end MakeCors" + data));
   xhr.send(body);
 }
 /* end form-to-db */
@@ -94,7 +91,7 @@ function validateForm(){
 	if(!(document.getElementById('f_tel').value.match(phoneno)))  
 	{  
 		$('.error_tel').show();
-		document.getElementById('f_email').focus() ;
+		document.getElementById('f_tel').focus() ;
 		return false;  
 	}
 	else {$('.error_tel').hide();}
@@ -165,6 +162,7 @@ function formToDb() {
 	var canal = "";
 	var q = [];
 	var optin = "";
+	var i = 0;
 
 	if ('canal' in p) {
 		canal = "orixa"
@@ -182,6 +180,7 @@ function formToDb() {
 		q[i] = $(this).attr("id");
 		i++;
 	})
+
 	var data = {
 		"schema": "spa_survey_2016",
 		"db": {
@@ -189,7 +188,7 @@ function formToDb() {
 			"email": $("#f_email").val(),
 			"firstname": $('#f_prenom').val(),
 			"lastname": $('#f_name').val(),
-			"phone": $('f_tel').val(),
+			"phone": $('#f_tel').val(),
 			"canal": canal,
 			"optin": optin,
 			"q1": q[0],
@@ -199,7 +198,6 @@ function formToDb() {
 			"q5": q[4]
 		}
 	}
-	console.log(JSON.stringify("before MakeCors" + data));
 	makeCorsRequest(data);
 }
 
@@ -262,8 +260,8 @@ function	get_results()
 	$(".selected").each(function(){
 		type[$(this).attr("value")] += 1;
 	});
-	console.log(type[0] + ' ' + type[1] + ' ' + type[2] + ' ' + type[3]);
-	return (getMaxTableau(type));
+//	console.log(type[0] + ' ' + type[1] + ' ' + type[2] + ' ' + type[3]);
+return (getMaxTableau(type));
 }
 
 function 	select(item)
