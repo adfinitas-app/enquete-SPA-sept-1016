@@ -127,32 +127,42 @@ var images = new Array();
 function 	getMaxTableau(table) {
 	var 	count;
 	var 	value;
+	var 	check;
 
 	count = 1;
+	check = 0;
 	value = table[0];
 	while (count < table.length)
 	{
 		if (table[value] < table[count])
+		{
 			value = count;
+			check = 0;
+		}
+		if (table[value] == table[count])
+			check = 1;
 		count++;
 	}
+	if (check == 1)
+		return (5);
 	return (value);
 }
 
 function 	display_results()
 {
 	var 	type;
-	var 	title = ["Sociable et courageux comme le chien !", "Tranquille comme le chat !", "Joueur comme le hamster !", "Dynamique et libre comme le cheval !"];
+	var 	title = ["Sociable et courageux comme le chien !", "Tranquille comme le chat !", "Joueur comme le hamster !", "Dynamique et libre comme le cheval !", "Câlin comme le lapin !"];
 	var 	description = ["L’ami sympathique par excellence, c'est vous ! Toujours présent pour sortir passer du bon temps, on sait que l’on peut aussi compter sur vous en cas de besoin. Quand vous êtes là, la bonne ambiance est toujours assurée, alors un conseil : ne changez pas ! ",
 	"On respecte votre force tranquille : vous n'avez pas besoin d'en faire des tonnes pour être remarqué(e). Comme le chat, vous faites parler de vous et ce n'est pas pour rien : vous êtes si doux !",
 	"Nous comptons tous au moins une personne infatigable dans notre cercle d'amis. Pour votre entourage, cette personne c'est vous. Très dynamique, vous êtes toujours à la recherche de nouvelles expériences et c'est vous qu'on appelle pour les idées un peu folles. Avec vous c'est sûr, on ne s'ennuie jamais ! (mais encore faut-il tenir votre rythme..)",
-	"Vous êtes celui qu'on admire pour son indépendance. Délicat, vous n'en êtes pas moins majestueux : vous imposez le respect par votre simple présence, pleine d'humilité et de bonté. A vos côtés on se sent souvent apaisé, et c'est pourquoi on recherche votre compagnie !"];
-	var 	fb_link = ["https://soutenir.la-spa.fr/?cid=143","https://soutenir.la-spa.fr/?cid=143","https://soutenir.la-spa.fr/?cid=143","https://soutenir.la-spa.fr/?cid=143"];
+	"Vous êtes celui qu'on admire pour son indépendance. Délicat, vous n'en êtes pas moins majestueux : vous imposez le respect par votre simple présence, pleine d'humilité et de bonté. A vos côtés on se sent souvent apaisé, et c'est pourquoi on recherche votre compagnie !", "Personne ne vous résiste : quelques minutes en votre compagnie suffisent à être touché par votre grand coeur. Vous êtes d'une rare douceur, ne vous étonnez pas si on se bat pour vous !"];
+	var 	fb_link = ["https://soutenir.la-spa.fr/?cid=143","https://soutenir.la-spa.fr/?cid=143","https://soutenir.la-spa.fr/?cid=143","https://soutenir.la-spa.fr/?cid=143", "https://soutenir.la-spa.fr/?cid=143","https://soutenir.la-spa.fr/?cid=143"];
 	var 	support = ["La SPA compte les chiens par milliers dans ses refuges. Chaque jour, nos experts parcourent la France pour sauver des animaux de la détresse, et leur offrir les meilleures conditions d'accueil. Vous aussi, protégez nos petits compagnons.",
 	"La SPA compte les chats par milliers dans ses refuges. Chaque jour, nos experts parcourent la France pour  sauver des animaux de la détresse, et leur offrir les meilleures conditions d'accueil. Vous aussi, protégez nos petits compagnons.",
 	"Les refuges de la SPA accueillent des chiens et chats, mais aussi des chevaux et d’autres animaux encore. Chaque jour, dans toute la France, nos équipes secourent et prennent soin des animaux en détresse. Vous aussi, protégez nos petits compagnons.",
-	"Les refuges de la SPA accueillent des chiens et chats, mais aussi des rongeurs (et bien d’autres animaux encore) ! Chaque jour, nos experts parcourent la France pour sauver  des animaux de la détresse, et leur offrir les meilleures conditions d'accueil. Vous aussi, protégez nos petits compagnons. "];
-	var 	img_link=["https://s3.amazonaws.com/heroku-adfinitas-campaign/SPA-donor-journey-sept-2016/img-resultat-chien.png","https://s3.amazonaws.com/heroku-adfinitas-campaign/SPA-donor-journey-sept-2016/img-resultat-chien.png","https://s3.amazonaws.com/heroku-adfinitas-campaign/SPA-donor-journey-sept-2016/img-resultat-chien.png","https://s3.amazonaws.com/heroku-adfinitas-campaign/SPA-donor-journey-sept-2016/img-resultat-chien.png"];
+	"Les refuges de la SPA accueillent des chiens et chats, mais aussi des rongeurs (et bien d’autres animaux encore) ! Chaque jour, nos experts parcourent la France pour sauver  des animaux de la détresse, et leur offrir les meilleures conditions d'accueil. Vous aussi, protégez nos petits compagnons.",
+	"Les refuges de la SPA accueillent des chiens et des chats mais aussi des lapins (et bien d’autres animaux encore). Chaque jour, dans toute la France, nos équipes secourent et prennent soin des animaux en détresse. Vous aussi, protégez nos petits compagnons."];
+	var 	img_link=["https://s3.amazonaws.com/heroku-adfinitas-campaign/SPA-donor-journey-sept-2016/img-resultat-chien.png","https://s3.amazonaws.com/heroku-adfinitas-campaign/SPA-donor-journey-sept-2016/img-resultat-chien.png","https://s3.amazonaws.com/heroku-adfinitas-campaign/SPA-donor-journey-sept-2016/img-resultat-chien.png","https://s3.amazonaws.com/heroku-adfinitas-campaign/SPA-donor-journey-sept-2016/img-resultat-chien.png", "https://s3.amazonaws.com/heroku-adfinitas-campaign/SPA-donor-journey-sept-2016/img-resultat-chien.png"];
 
 	type = get_results();
 	$("#input_title").html(title[type]);
@@ -170,6 +180,7 @@ function	get_results()
 	$(".selected").each(function(){
 		type[$(this).attr("value")] += 1;
 	});
+	console.log(type[0] + ' ' + type[1] + ' ' + type[2] + ' ' + type[3]);
 	return (getMaxTableau(type));
 }
 
@@ -314,14 +325,10 @@ $('#button-retour').click(function(){
 });
 
 $(window).scroll(function() {
-	console.log("helfezlo");
 	if ($('#final').css('display') == "block")
 	{
 		var wS = $(this).scrollTop();
-		console.log(wS + "--");
-		console.log($('#final').offset().top + $('#final').outerHeight() - $(window).height());
 		if (wS >= ($('#final').offset().top + $('#final').outerHeight() - $(window).height())){
-			console.log("hello");
 			$("#final").prevAll().css({"display" : "none"});
 		}
 	}
