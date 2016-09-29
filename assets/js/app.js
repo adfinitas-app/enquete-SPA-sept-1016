@@ -17,6 +17,46 @@ function(response) {
 }
 );
 */
+
+/* form-to-db */
+function createCORSRequest(method, url) {
+	var xhr = new XMLHttpRequest();
+	if ("withCredentials" in xhr) {
+    // XHR for Chrome/Firefox/Opera/Safari.
+    xhr.open(method, url, true);
+} else if (typeof XDomainRequest != "undefined") {
+    // XDomainRequest for IE.
+    xhr = new XDomainRequest();
+    xhr.open(method, url);
+} else {
+    // CORS not supported.
+    xhr = null;
+}
+return xhr;
+}
+
+function makeCorsRequest(data) {
+	var url = 'https://form-to-db.herokuapp.com/';
+	var body = JSON.stringify(data);
+	var xhr = createCORSRequest('POST', url);
+	if (!xhr) {
+		alert('CORS not supported');
+		return;
+	}
+	xhr.setRequestHeader('Content-Type', 'application/json');
+  // Response handlers.
+  xhr.onload = function() {
+  	var text = xhr.responseText;
+  	document.location.href = "/merci.html";
+  };
+  // Error Handler
+  xhr.onerror = function() {
+  	alert('Woops, there was an error making the request.');
+  };
+  xhr.send(body);
+}
+/* end form-to-db */
+
 $(window).scroll(function(e){ 
 	var $el = $('.fixedElement');
 	var isPositionFixed = ($el.css('position') == 'fixed');
@@ -71,7 +111,8 @@ function validateForm(){
 	display_results();
 
 	$('#footer').css({"display": "block"});
-	SendDataToWoopra();
+	//SendDataToWoopra();
+	formToDb();
 	FadeOutFormSlide();
 };
 
@@ -113,13 +154,56 @@ function SendDataToWoopra() {
 			optin: optin
 		});
 	}
-	else {woopra.track("survey_2016", {
-		canal: "bdd",
-		optin: optin
-	});
-}
+	else {
+		woopra.track("survey_2016", {
+			canal: "bdd",
+			optin: optin
+		});
+	}
 }
 
+function formToDb() {
+	var p = extractUrlParams();
+	var canal = "";
+	var q = [];
+	var optin = "";
+
+	if ('canal' in p) {
+		canal = "orixa"
+	}
+	else {
+		canal = "bdd";
+	}
+
+	if(document.getElementById('f_check').checked == true)
+		optin = "non";
+	else
+		optin = "oui";
+
+	$(".selected").each( function() {
+		q[i] = $(this).attr("id");
+		console.log(q[i]);
+		i++;
+	})
+	var data = {
+		"schema": "spa_survey_2016",
+		"db": {
+			"q1": q[0],
+			"q2": q[1],
+			"q3": q[2],
+			"q4": q[3],
+			"q5": q[4],
+			"origin": "Enquete 2016",
+			"email": $("#f_email").val(),
+			"firstname": $('#f_prenom').val(),
+			"lastname": $('#f_name').val(),
+			"phone": $('f_tel').val(),
+			"canal": canal,
+			"optin": optin
+		}
+	}
+	makeCorsRequest(data);
+}
 
 
 var images = new Array();
@@ -131,7 +215,7 @@ function 	getMaxTableau(table) {
 
 	count = 1;
 	check = 0;
-	value = table[0];
+	value = 0;
 	while (count < table.length)
 	{
 		if (table[value] < table[count])
@@ -139,12 +223,12 @@ function 	getMaxTableau(table) {
 			value = count;
 			check = 0;
 		}
-		if (table[value] == table[count])
+		else if (table[value] == table[count])
 			check = 1;
 		count++;
 	}
 	if (check == 1)
-		return (5);
+		return (4);
 	return (value);
 }
 
