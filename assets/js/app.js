@@ -107,9 +107,9 @@ function validateForm(){
 	
 	display_results();
 	$('#footer').css({"display": "block"});
-//	SendDataToWoopra();
-//	formToDb();
-FadeOutFormSlide();
+	SendDataToWoopra();
+	formToDb();
+	FadeOutFormSlide();
 };
 
 function FadeOutFormSlide() {
