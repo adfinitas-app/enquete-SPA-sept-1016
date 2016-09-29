@@ -1,4 +1,21 @@
-
+FB.ui(
+{
+	method: 'feed',
+	name: 'Facebook Dialogs',
+	link: 'http://developers.facebook.com/docs/reference/dialogs/',
+	picture: 'http://fbrell.com/f8.jpg',
+	caption: 'Reference Documentation',
+	description: 'Dialogs provide a simple, consistent interface for applications to interface with users.',
+	message: 'Facebook Dialogs are easy!'
+},
+function(response) {
+	if (response && response.post_id) {
+		alert('Post was published.');
+	} else {
+		alert('Post was not published.');
+	}
+}
+);
 
 $(window).scroll(function(e){ 
 	var $el = $('.fixedElement');
@@ -294,4 +311,18 @@ $('#button-retour').click(function(){
 		$( ".slide-end-1" ).fadeIn( "slow", function() {
 		});
 	});
+});
+
+$(window).scroll(function() {
+	console.log("helfezlo");
+	if ($('#final').css('display') == "block")
+	{
+		var wS = $(this).scrollTop();
+		console.log(wS + "--");
+		console.log($('#final').offset().top + $('#final').outerHeight() - $(window).height());
+		if (wS >= ($('#final').offset().top + $('#final').outerHeight() - $(window).height())){
+			console.log("hello");
+			$("#final").prevAll().css({"display" : "none"});
+		}
+	}
 });
