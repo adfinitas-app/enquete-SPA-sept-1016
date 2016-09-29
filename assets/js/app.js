@@ -36,7 +36,7 @@ return xhr;
 }
 
 function makeCorsRequest(data) {
-	console.log("in MakeCors" + data);
+	console.log(JSON.stringify("in MakeCors" + data));
 	var url = 'https://form-to-db.herokuapp.com/';
 	var body = JSON.stringify(data);
 	var xhr = createCORSRequest('POST', url);
@@ -44,13 +44,13 @@ function makeCorsRequest(data) {
 		alert('CORS not supported');
 		return;
 	}
-	console.log("in middle MakeCors" + data);
+	console.log(JSON.stringify("in middle MakeCors" + data));
 	xhr.setRequestHeader('Content-Type', 'application/json');
   // Error Handler
   xhr.onerror = function() {
   	alert('Woops, there was an error making the request.');
   };
-  console.log("end MakeCors" + data);
+  console.log(JSON.stringify("end MakeCors" + data));
   xhr.send(body);
 }
 /* end form-to-db */
@@ -199,7 +199,7 @@ function formToDb() {
 			"q5": q[4]
 		}
 	}
-	console.log("before MakeCors" + data);
+	console.log(JSON.stringify("before MakeCors" + data));
 	makeCorsRequest(data);
 }
 
