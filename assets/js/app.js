@@ -81,32 +81,33 @@ function validateForm(){
 	var phoneno = /^\d{10}$/;  
 	atpos = emailID.indexOf("@");
 	dotpos = emailID.lastIndexOf(".");
-	if (atpos < 1 || ( dotpos - atpos < 2 )) 
+
+	if (atpos < 1 || ( dotpos - atpos < 2 ) && index.html) 
 	{
 		$('.error_mail').show();
 		document.getElementById('f_email').focus() ;
 		return false;
 	}
 	else {$('.error_mail').hide();}
-	if(!(document.getElementById('f_tel').value.match(phoneno)))  
+
+	if(!(document.getElementById('f_tel').value.match(phoneno)) && (document.getElementById('f_tel').value.length > 0))  
 	{  
 		$('.error_tel').show();
 		document.getElementById('f_tel').focus() ;
 		return false;  
 	}
 	else {$('.error_tel').hide();}
+
 	if((document.getElementById('f_name').value.length == 0) || (document.getElementById('f_prenom').value.length == 0))
 	{  
 		$('.error_np').show();
 		return false;  
 	}
 	else {$('.error_np').hide();}
-
 	
 	display_results();
-
 	$('#footer').css({"display": "block"});
-	//SendDataToWoopra();
+	SendDataToWoopra();
 	formToDb();
 	FadeOutFormSlide();
 };
