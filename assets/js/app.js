@@ -44,11 +44,6 @@ function makeCorsRequest(data) {
 		return;
 	}
 	xhr.setRequestHeader('Content-Type', 'application/json');
-  // Response handlers.
-  xhr.onload = function() {
-  	var text = xhr.responseText;
-  	document.location.href = "/merci.html";
-  };
   // Error Handler
   xhr.onerror = function() {
   	alert('Woops, there was an error making the request.');
@@ -182,7 +177,6 @@ function formToDb() {
 
 	$(".selected").each( function() {
 		q[i] = $(this).attr("id");
-		console.log(q[i]);
 		i++;
 	})
 	var data = {
