@@ -1,4 +1,4 @@
-FB.ui(
+/*FB.ui(
 {
 	method: 'feed',
 	name: 'Facebook Dialogs',
@@ -16,7 +16,7 @@ function(response) {
 	}
 }
 );
-
+*/
 $(window).scroll(function(e){ 
 	var $el = $('.fixedElement');
 	var isPositionFixed = ($el.css('position') == 'fixed');
