@@ -36,6 +36,7 @@ return xhr;
 }
 
 function makeCorsRequest(data) {
+	console.log("in MakeCors" + data);
 	var url = 'https://form-to-db.herokuapp.com/';
 	var body = JSON.stringify(data);
 	var xhr = createCORSRequest('POST', url);
@@ -43,11 +44,13 @@ function makeCorsRequest(data) {
 		alert('CORS not supported');
 		return;
 	}
+	console.log("in middle MakeCors" + data);
 	xhr.setRequestHeader('Content-Type', 'application/json');
   // Error Handler
   xhr.onerror = function() {
   	alert('Woops, there was an error making the request.');
   };
+  console.log("end MakeCors" + data);
   xhr.send(body);
 }
 /* end form-to-db */
@@ -182,11 +185,6 @@ function formToDb() {
 	var data = {
 		"schema": "spa_survey_2016",
 		"db": {
-			"q1": q[0],
-			"q2": q[1],
-			"q3": q[2],
-			"q4": q[3],
-			"q5": q[4],
 			"origin": "Enquete 2016",
 			"email": $("#f_email").val(),
 			"firstname": $('#f_prenom').val(),
@@ -194,8 +192,14 @@ function formToDb() {
 			"phone": $('f_tel').val(),
 			"canal": canal,
 			"optin": optin
+			"q1": q[0],
+			"q2": q[1],
+			"q3": q[2],
+			"q4": q[3],
+			"q5": q[4],
 		}
 	}
+	console.log("before MakeCors" + data);
 	makeCorsRequest(data);
 }
 
