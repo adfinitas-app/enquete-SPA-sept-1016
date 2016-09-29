@@ -107,9 +107,9 @@ function validateForm(){
 	
 	display_results();
 	$('#footer').css({"display": "block"});
-	SendDataToWoopra();
-	formToDb();
-	FadeOutFormSlide();
+//	SendDataToWoopra();
+//	formToDb();
+FadeOutFormSlide();
 };
 
 function FadeOutFormSlide() {
@@ -391,19 +391,6 @@ function 	scrollTo(next){
 	}
 };
 
-$('#button-don').click(function(){
-	$( ".slide-end-1" ).fadeOut( "slow", function() {
-		$( ".slide-end" ).fadeIn( "slow", function() {
-		});
-	});
-});
-
-$('#button-retour').click(function(){
-	$( ".slide-end" ).fadeOut( "slow", function() {
-		$( ".slide-end-1" ).fadeIn( "slow", function() {
-		});
-	});
-});
 
 $(window).scroll(function() {
 	if ($('#final').css('display') == "block")
