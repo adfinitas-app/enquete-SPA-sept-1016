@@ -409,3 +409,30 @@ $(window).scroll(function() {
 		}
 	}
 });
+
+window.fbAsyncInit = function() {
+	FB.init({
+		appId      : '1590016401303861',
+		xfbml      : true,
+		version    : 'v2.7'
+	});
+	document.getElementById('input_link').onclick = function() {
+		FB.ui({
+			method: 'feed',
+			link: 'http://quizz.la-spa.fr/',
+			caption: 'TEST TEST TEST',
+		}, function(response){});
+	}
+};
+
+(function(d, s, id){
+	var js, fjs = d.getElementsByTagName(s)[0];
+	if (d.getElementById(id)) {return;}
+	js = d.createElement(s); js.id = id;
+	js.src = "//connect.facebook.net/fr_FR/sdk.js";
+	fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+
+
+
+
