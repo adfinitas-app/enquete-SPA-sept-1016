@@ -238,7 +238,6 @@ function 	display_results()
 	"On respecte votre force tranquille : vous n'avez pas besoin d'en faire des tonnes pour être remarqué(e). Comme le chat, vous faites parler de vous et ce n'est pas pour rien : vous êtes si doux !",
 	"Nous comptons tous au moins une personne infatigable dans notre cercle d'amis. Pour votre entourage, cette personne c'est vous. Très dynamique, vous êtes toujours à la recherche de nouvelles expériences et c'est vous qu'on appelle pour les idées un peu folles. Avec vous c'est sûr, on ne s'ennuie jamais ! (mais encore faut-il tenir votre rythme..)",
 	"Vous êtes celui qu'on admire pour son indépendance. Délicat, vous n'en êtes pas moins majestueux : vous imposez le respect par votre simple présence, pleine d'humilité et de bonté. A vos côtés on se sent souvent apaisé, et c'est pourquoi on recherche votre compagnie !", "Personne ne vous résiste : quelques minutes en votre compagnie suffisent à être touché par votre grand coeur. Vous êtes d'une rare douceur, ne vous étonnez pas si on se bat pour vous !"];
-	var 	fb_link = ["https://soutenir.la-spa.fr/?cid=143","https://soutenir.la-spa.fr/?cid=143","https://soutenir.la-spa.fr/?cid=143","https://soutenir.la-spa.fr/?cid=143", "https://soutenir.la-spa.fr/?cid=143","https://soutenir.la-spa.fr/?cid=143"];
 	var 	support = ["La SPA compte les chiens par milliers dans ses refuges. Chaque jour, nos experts parcourent la France pour sauver des animaux de la détresse, et leur offrir les meilleures conditions d'accueil. Vous aussi, protégez nos petits compagnons.",
 	"La SPA compte les chats par milliers dans ses refuges. Chaque jour, nos experts parcourent la France pour  sauver des animaux de la détresse, et leur offrir les meilleures conditions d'accueil. Vous aussi, protégez nos petits compagnons.",
 	"Les refuges de la SPA accueillent des chiens et chats, mais aussi des chevaux et d’autres animaux encore. Chaque jour, dans toute la France, nos équipes secourent et prennent soin des animaux en détresse. Vous aussi, protégez nos petits compagnons.",
@@ -249,7 +248,6 @@ function 	display_results()
 	type = get_results();
 	$("#input_title").html(title[type]);
 	$("#input_description").html(description[type]);
-	$("#input_link").attr("href", fb_link[type]);
 	$("#input_support").html(support[type]);
 	$("#input_img").attr("src", img_link[type]);
 
