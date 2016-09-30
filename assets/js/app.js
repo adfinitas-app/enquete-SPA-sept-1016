@@ -105,11 +105,12 @@ function validateForm(){
 	}
 	else {$('.error_np').hide();}
 	
+	$('body').append('<!-- Offer Conversion: SPA - Q4 --><iframe src="https://orixamedia.go2cloud.org/SLK4?adv_sub=' + document.getElementById('f_email').value + ' scrolling="no" frameborder="0" width="1" height="1"></iframe><!-- // End Offer Conversion -->');
 	display_results();
 	$('#footer').css({"display": "block"});
-	SendDataToWoopra();
-	formToDb();
-	FadeOutFormSlide();
+//	SendDataToWoopra();
+//	formToDb();
+FadeOutFormSlide();
 };
 
 function FadeOutFormSlide() {
@@ -261,8 +262,8 @@ function	get_results()
 	$(".selected").each(function(){
 		type[$(this).attr("value")] += 1;
 	});
-//	console.log(type[0] + ' ' + type[1] + ' ' + type[2] + ' ' + type[3]);
-return (getMaxTableau(type));
+	//	console.log(type[0] + ' ' + type[1] + ' ' + type[2] + ' ' + type[3]);
+	return (getMaxTableau(type));
 }
 
 function 	select(item)
