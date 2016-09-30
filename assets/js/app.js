@@ -419,8 +419,11 @@ window.fbAsyncInit = function() {
 	document.getElementById('input_link').onclick = function() {
 		FB.ui({
 			method: 'feed',
+			picture: img_link[type],
 			link: 'http://quizz.la-spa.fr/',
 			caption: description[type],
+			description: title[type],
+			
 		}, function(response){});
 	}
 };
