@@ -12,23 +12,6 @@
 	<link rel='stylesheet' href='assets/css/app.min.css' type='text/css'/>
 </head>
 <body>
-	<script>
-		window.fbAsyncInit = function() {
-			FB.init({
-				appId      : '1590016401303861',
-				xfbml      : true,
-				version    : 'v2.7'
-			});
-		};
-
-		(function(d, s, id){
-			var js, fjs = d.getElementsByTagName(s)[0];
-			if (d.getElementById(id)) {return;}
-			js = d.createElement(s); js.id = id;
-			js.src = "//connect.facebook.net/en_US/sdk.js";
-			fjs.parentNode.insertBefore(js, fjs);
-		}(document, 'script', 'facebook-jssdk'));
-	</script>
 	<div class="row fullWidth slide" style="background-image: url('https://s3.amazonaws.com/heroku-adfinitas-campaign/SPA-donor-journey-sept-2016/header-bg.png'); background-position: 50% 10%; background-size: cover">
 		<img class="fixedElement no-display" id="sticky-logo" style="position: fixed; top: 10px; left: 10px; margin-top: 10px; margin-left: 10px; z-index: 9999;" src="https://s3.amazonaws.com/heroku-adfinitas-campaign/SPA-donor-journey-sept-2016/sticky-logo.png">
 		<div class="large-6 large-offset-5 columns end">
@@ -147,14 +130,14 @@
 	</div>
 	<div class="row slide-end-1" style="display: none">
 		<div class="large-7 small-centered columns" style="text-align:center;">
-			<img id="input_img" style="margin-right: 30px; max-width: 300px" src="https://s3.amazonaws.com/heroku-adfinitas-campaign/SPA-donor-journey-sept-2016/img-resultat-chien.png">
+			<img id="input_img" style="margin-top: 5%; margin-right: 30px; max-width: 300px" src="https://s3.amazonaws.com/heroku-adfinitas-campaign/SPA-donor-journey-sept-2016/img-resultat-chien.png">
 			<p style="font-family: 'Amatic SC'; font-weight: 700; font-size: 56px; color: #FFFFFF; line-height: 95px; ">FÉLICITATIONS</p>
 			<p id="input_title" class="text-style" style="padding-top: 15px; padding-bottom: 30px; color: #FFFFFF; font-size: 20px; line-height: 25px;">VOUS ÊTES SOCIABLE<br />ET COURAGEUX COMME LE CHIEN !</p>
 			<p id="input_description" class="text-normal" style="font-size: 18px">L’ami sympathique par excellence, c'est vous ! Toujours présent pour sortir passer du bon temps, on sait que l’on peut aussi compter sur vous en cas de besoin. Quand vous êtes là, la bonne ambiance est toujours assurée, alors un conseil : ne changez pas !</p>
 		</div>
 	</div>
 	<div class="row slide-end-1" style="margin-top: 20px; margin-bottom: 15px; display: none; text-align: center">
-		<a id="input_link" href="https://soutenir.la-spa.fr/?cid=143" target="_blank"><button type="button" class="button button-facebook" style="margin-bottom: 10px; width: 100%; max-width: 392px"><span class="text-style" style="margin-left: 40px">PARTAGER MON RÉSULTAT</span></button></a>					
+		<a id="input_link" target="_blank"><button type="button" class="button button-facebook" style="margin-bottom: 10px; width: 100%; max-width: 392px"><span class="text-style" style="margin-left: 40px">PARTAGER MON RÉSULTAT</span></button></a>					
 	</div>
 	<div class="row slide slide-end-1" id="slide_don" style="display: none">
 		<div class="large-6 large-centered columns">
@@ -224,11 +207,28 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.3/foundation.min.js" type="text/javascript"></script>
 <script src="assets/js/intlTelInput.min.js"></script>
 <script>
-	FB.ui({
-		method: 'feed',
-		link: 'https://developers.facebook.com/docs/',
-		caption: 'TEST TEST TEST',
-	}, function(response){});
+	window.fbAsyncInit = function() {
+		FB.init({
+			appId      : '1590016401303861',
+			xfbml      : true,
+			version    : 'v2.7'
+		});
+		document.getElementById('input_link').onclick = function() {
+			FB.ui({
+				method: 'feed',
+				link: 'http://quizz.la-spa.fr/',
+				caption: 'TEST TEST TEST',
+			}, function(response){});
+		}
+	};
+
+	(function(d, s, id){
+		var js, fjs = d.getElementsByTagName(s)[0];
+		if (d.getElementById(id)) {return;}
+		js = d.createElement(s); js.id = id;
+		js.src = "//connect.facebook.net/fr_FR/sdk.js";
+		fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));
 </script>
 <!-- Start of Woopra Code -->
 <script>
