@@ -299,6 +299,7 @@ function 	preload() {
 	}
 }
 
+
 function 	vertical_center(item)
 {
 	var 	height;
@@ -308,7 +309,7 @@ function 	vertical_center(item)
 	height = $(item).height();
 	total_height = $(item).parent().height();
 	padding = (total_height - height) / 2 - 20;
-	$(item).css({"padding-top" : padding});
+	$(item).css({"padding-top" : "8%"});
 }
 
 
