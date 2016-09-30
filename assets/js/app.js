@@ -421,7 +421,7 @@ window.fbAsyncInit = function() {
 			method: 'feed',
 			picture: img_link[type],
 			link: 'http://quizz.la-spa.fr/',
-			description: "Je suis <" + title[type] + ">",
+			description: "Je suis \"" + title[type] + "\"",
 			caption: "Venez découvrir quel animal se cache en vous",
 
 		}, function(response){});
