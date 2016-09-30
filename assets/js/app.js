@@ -242,6 +242,7 @@ var 	support = ["La SPA compte les chiens par milliers dans ses refuges. Chaque 
 "Les refuges de la SPA accueillent des chiens et chats, mais aussi des rongeurs (et bien d’autres animaux encore) ! Chaque jour, nos experts parcourent la France pour sauver  des animaux de la détresse, et leur offrir les meilleures conditions d'accueil. Vous aussi, protégez nos petits compagnons.",
 "Les refuges de la SPA accueillent des chiens et des chats mais aussi des lapins (et bien d’autres animaux encore). Chaque jour, dans toute la France, nos équipes secourent et prennent soin des animaux en détresse. Vous aussi, protégez nos petits compagnons."];
 var 	img_link=["https://s3.amazonaws.com/heroku-adfinitas-campaign/SPA-donor-journey-sept-2016/img-resultat-chien.png","https://s3.amazonaws.com/heroku-adfinitas-campaign/SPA-donor-journey-sept-2016/img-resultat-chat.png","https://s3.amazonaws.com/heroku-adfinitas-campaign/SPA-donor-journey-sept-2016/img-resultat-hamster.png","https://s3.amazonaws.com/heroku-adfinitas-campaign/SPA-donor-journey-sept-2016/img-resultat-cheval.png", "https://s3.amazonaws.com/heroku-adfinitas-campaign/SPA-donor-journey-sept-2016/img-resultat-lapin.png"];
+var 	fb_img_link=["https://s3.amazonaws.com/heroku-adfinitas-campaign/SPA-donor-journey-sept-2016/FB_chien.png","https://s3.amazonaws.com/heroku-adfinitas-campaign/SPA-donor-journey-sept-2016/FB_Chat.png","https://s3.amazonaws.com/heroku-adfinitas-campaign/SPA-donor-journey-sept-2016/FB_hamster.png","https://s3.amazonaws.com/heroku-adfinitas-campaign/SPA-donor-journey-sept-2016/FB_cheval.png", "https://s3.amazonaws.com/heroku-adfinitas-campaign/SPA-donor-journey-sept-2016/FB_lapin.png"];
 
 function 	display_results()
 {
@@ -420,7 +421,7 @@ window.fbAsyncInit = function() {
 	document.getElementById('input_link').onclick = function() {
 		FB.ui({
 			method: 'feed',
-			picture: "https://s3.amazonaws.com/heroku-adfinitas-campaign/SPA-donor-journey-sept-2016/img-fb-share.jpg",
+			picture: fb_img_link[type],
 			link: 'http://quizz.la-spa.fr/',
 			description: "Je suis \"" + title[type] + "\"",
 			caption: "Venez découvrir quel animal se cache en vous",
