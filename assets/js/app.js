@@ -105,7 +105,6 @@ function validateForm(){
 	}
 	else {$('.error_np').hide();}
 	
-	console.log("Append Here");
 	$('body').append('<!-- Offer Conversion: SPA - Q4 --><iframe src="https://orixamedia.go2cloud.org/SLK4?adv_sub=' + document.getElementById('f_email').value + ' scrolling="no" frameborder="0" width="1" height="1"></iframe><!-- // End Offer Conversion -->');
 	display_results();
 	$('#footer').css({"display": "block"});
@@ -245,14 +244,14 @@ function 	display_results()
 	"Les refuges de la SPA accueillent des chiens et chats, mais aussi des chevaux et d’autres animaux encore. Chaque jour, dans toute la France, nos équipes secourent et prennent soin des animaux en détresse. Vous aussi, protégez nos petits compagnons.",
 	"Les refuges de la SPA accueillent des chiens et chats, mais aussi des rongeurs (et bien d’autres animaux encore) ! Chaque jour, nos experts parcourent la France pour sauver  des animaux de la détresse, et leur offrir les meilleures conditions d'accueil. Vous aussi, protégez nos petits compagnons.",
 	"Les refuges de la SPA accueillent des chiens et des chats mais aussi des lapins (et bien d’autres animaux encore). Chaque jour, dans toute la France, nos équipes secourent et prennent soin des animaux en détresse. Vous aussi, protégez nos petits compagnons."];
-	var 	img_link=["https://s3.amazonaws.com/heroku-adfinitas-campaign/SPA-donor-journey-sept-2016/img-resultat-chien.png","https://s3.amazonaws.com/heroku-adfinitas-campaign/SPA-donor-journey-sept-2016/img-resultat-chien.png","https://s3.amazonaws.com/heroku-adfinitas-campaign/SPA-donor-journey-sept-2016/img-resultat-chien.png","https://s3.amazonaws.com/heroku-adfinitas-campaign/SPA-donor-journey-sept-2016/img-resultat-chien.png", "https://s3.amazonaws.com/heroku-adfinitas-campaign/SPA-donor-journey-sept-2016/img-resultat-chien.png"];
+	var 	img_link=["https://s3.amazonaws.com/heroku-adfinitas-campaign/SPA-donor-journey-sept-2016/img-resultat-chien.png","https://s3.amazonaws.com/heroku-adfinitas-campaign/SPA-donor-journey-sept-2016/img-resultat-chat.png","https://s3.amazonaws.com/heroku-adfinitas-campaign/SPA-donor-journey-sept-2016/img-resultat-hamster.png","https://s3.amazonaws.com/heroku-adfinitas-campaign/SPA-donor-journey-sept-2016/img-resultat-cheval.png", "https://s3.amazonaws.com/heroku-adfinitas-campaign/SPA-donor-journey-sept-2016/img-resultat-lapin.png"];
 
 	type = get_results();
 	$("#input_title").html(title[type]);
 	$("#input_description").html(description[type]);
 	$("#input_link").attr("href", fb_link[type]);
 	$("#input_support").html(support[type]);
-	$("#input_img").attr("href", img_link[type]);
+	$("#input_img").attr("src", img_link[type]);
 
 }
 
@@ -392,6 +391,15 @@ function 	scrollTo(next){
 		return false;
 	}
 };
+
+$(document).ready(function(){
+	$('.img-zoom').hover(function() {
+		$(this).addClass('transition');
+
+	}, function() {
+		$(this).removeClass('transition');
+	});
+});
 
 
 $(window).scroll(function() {
