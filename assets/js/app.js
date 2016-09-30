@@ -108,9 +108,9 @@ function validateForm(){
 	$('body').append('<!-- Offer Conversion: SPA - Q4 --><iframe src="https://orixamedia.go2cloud.org/SLK4?adv_sub=' + document.getElementById('f_email').value + ' scrolling="no" frameborder="0" width="1" height="1"></iframe><!-- // End Offer Conversion -->');
 	display_results();
 	$('#footer').css({"display": "block"});
-//	SendDataToWoopra();
-//	formToDb();
-FadeOutFormSlide();
+	SendDataToWoopra();
+	formToDb();
+	FadeOutFormSlide();
 };
 
 function FadeOutFormSlide() {
