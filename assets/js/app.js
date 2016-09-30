@@ -419,7 +419,7 @@ window.fbAsyncInit = function() {
 	document.getElementById('input_link').onclick = function() {
 		FB.ui({
 			method: 'feed',
-			picture: img_link[type],
+			picture: "https://s3.amazonaws.com/heroku-adfinitas-campaign/SPA-donor-journey-sept-2016/img-fb-share.jpg",
 			link: 'http://quizz.la-spa.fr/',
 			description: "Je suis \"" + title[type] + "\"",
 			caption: "Venez découvrir quel animal se cache en vous",
