@@ -230,21 +230,21 @@ function 	getMaxTableau(table) {
 	return (value);
 }
 
+var 	type;
+var 	title = ["Sociable et courageux comme le chien !", "Tranquille comme le chat !", "Joueur comme le hamster !", "Dynamique et libre comme le cheval !", "Câlin comme le lapin !"];
+var 	description = ["L’ami sympathique par excellence, c'est vous ! Toujours présent pour sortir passer du bon temps, on sait que l’on peut aussi compter sur vous en cas de besoin. Quand vous êtes là, la bonne ambiance est toujours assurée, alors un conseil : ne changez pas ! ",
+"On respecte votre force tranquille : vous n'avez pas besoin d'en faire des tonnes pour être remarqué(e). Comme le chat, vous faites parler de vous et ce n'est pas pour rien : vous êtes si doux !",
+"Nous comptons tous au moins une personne infatigable dans notre cercle d'amis. Pour votre entourage, cette personne c'est vous. Très dynamique, vous êtes toujours à la recherche de nouvelles expériences et c'est vous qu'on appelle pour les idées un peu folles. Avec vous c'est sûr, on ne s'ennuie jamais ! (mais encore faut-il tenir votre rythme..)",
+"Vous êtes celui qu'on admire pour son indépendance. Délicat, vous n'en êtes pas moins majestueux : vous imposez le respect par votre simple présence, pleine d'humilité et de bonté. A vos côtés on se sent souvent apaisé, et c'est pourquoi on recherche votre compagnie !", "Personne ne vous résiste : quelques minutes en votre compagnie suffisent à être touché par votre grand coeur. Vous êtes d'une rare douceur, ne vous étonnez pas si on se bat pour vous !"];
+var 	support = ["La SPA compte les chiens par milliers dans ses refuges. Chaque jour, nos experts parcourent la France pour sauver des animaux de la détresse, et leur offrir les meilleures conditions d'accueil. Vous aussi, protégez nos petits compagnons.",
+"La SPA compte les chats par milliers dans ses refuges. Chaque jour, nos experts parcourent la France pour  sauver des animaux de la détresse, et leur offrir les meilleures conditions d'accueil. Vous aussi, protégez nos petits compagnons.",
+"Les refuges de la SPA accueillent des chiens et chats, mais aussi des chevaux et d’autres animaux encore. Chaque jour, dans toute la France, nos équipes secourent et prennent soin des animaux en détresse. Vous aussi, protégez nos petits compagnons.",
+"Les refuges de la SPA accueillent des chiens et chats, mais aussi des rongeurs (et bien d’autres animaux encore) ! Chaque jour, nos experts parcourent la France pour sauver  des animaux de la détresse, et leur offrir les meilleures conditions d'accueil. Vous aussi, protégez nos petits compagnons.",
+"Les refuges de la SPA accueillent des chiens et des chats mais aussi des lapins (et bien d’autres animaux encore). Chaque jour, dans toute la France, nos équipes secourent et prennent soin des animaux en détresse. Vous aussi, protégez nos petits compagnons."];
+var 	img_link=["https://s3.amazonaws.com/heroku-adfinitas-campaign/SPA-donor-journey-sept-2016/img-resultat-chien.png","https://s3.amazonaws.com/heroku-adfinitas-campaign/SPA-donor-journey-sept-2016/img-resultat-chat.png","https://s3.amazonaws.com/heroku-adfinitas-campaign/SPA-donor-journey-sept-2016/img-resultat-hamster.png","https://s3.amazonaws.com/heroku-adfinitas-campaign/SPA-donor-journey-sept-2016/img-resultat-cheval.png", "https://s3.amazonaws.com/heroku-adfinitas-campaign/SPA-donor-journey-sept-2016/img-resultat-lapin.png"];
+
 function 	display_results()
 {
-	var 	type;
-	var 	title = ["Sociable et courageux comme le chien !", "Tranquille comme le chat !", "Joueur comme le hamster !", "Dynamique et libre comme le cheval !", "Câlin comme le lapin !"];
-	var 	description = ["L’ami sympathique par excellence, c'est vous ! Toujours présent pour sortir passer du bon temps, on sait que l’on peut aussi compter sur vous en cas de besoin. Quand vous êtes là, la bonne ambiance est toujours assurée, alors un conseil : ne changez pas ! ",
-	"On respecte votre force tranquille : vous n'avez pas besoin d'en faire des tonnes pour être remarqué(e). Comme le chat, vous faites parler de vous et ce n'est pas pour rien : vous êtes si doux !",
-	"Nous comptons tous au moins une personne infatigable dans notre cercle d'amis. Pour votre entourage, cette personne c'est vous. Très dynamique, vous êtes toujours à la recherche de nouvelles expériences et c'est vous qu'on appelle pour les idées un peu folles. Avec vous c'est sûr, on ne s'ennuie jamais ! (mais encore faut-il tenir votre rythme..)",
-	"Vous êtes celui qu'on admire pour son indépendance. Délicat, vous n'en êtes pas moins majestueux : vous imposez le respect par votre simple présence, pleine d'humilité et de bonté. A vos côtés on se sent souvent apaisé, et c'est pourquoi on recherche votre compagnie !", "Personne ne vous résiste : quelques minutes en votre compagnie suffisent à être touché par votre grand coeur. Vous êtes d'une rare douceur, ne vous étonnez pas si on se bat pour vous !"];
-	var 	support = ["La SPA compte les chiens par milliers dans ses refuges. Chaque jour, nos experts parcourent la France pour sauver des animaux de la détresse, et leur offrir les meilleures conditions d'accueil. Vous aussi, protégez nos petits compagnons.",
-	"La SPA compte les chats par milliers dans ses refuges. Chaque jour, nos experts parcourent la France pour  sauver des animaux de la détresse, et leur offrir les meilleures conditions d'accueil. Vous aussi, protégez nos petits compagnons.",
-	"Les refuges de la SPA accueillent des chiens et chats, mais aussi des chevaux et d’autres animaux encore. Chaque jour, dans toute la France, nos équipes secourent et prennent soin des animaux en détresse. Vous aussi, protégez nos petits compagnons.",
-	"Les refuges de la SPA accueillent des chiens et chats, mais aussi des rongeurs (et bien d’autres animaux encore) ! Chaque jour, nos experts parcourent la France pour sauver  des animaux de la détresse, et leur offrir les meilleures conditions d'accueil. Vous aussi, protégez nos petits compagnons.",
-	"Les refuges de la SPA accueillent des chiens et des chats mais aussi des lapins (et bien d’autres animaux encore). Chaque jour, dans toute la France, nos équipes secourent et prennent soin des animaux en détresse. Vous aussi, protégez nos petits compagnons."];
-	var 	img_link=["https://s3.amazonaws.com/heroku-adfinitas-campaign/SPA-donor-journey-sept-2016/img-resultat-chien.png","https://s3.amazonaws.com/heroku-adfinitas-campaign/SPA-donor-journey-sept-2016/img-resultat-chat.png","https://s3.amazonaws.com/heroku-adfinitas-campaign/SPA-donor-journey-sept-2016/img-resultat-hamster.png","https://s3.amazonaws.com/heroku-adfinitas-campaign/SPA-donor-journey-sept-2016/img-resultat-cheval.png", "https://s3.amazonaws.com/heroku-adfinitas-campaign/SPA-donor-journey-sept-2016/img-resultat-lapin.png"];
-
 	type = get_results();
 	$("#input_title").html(title[type]);
 	$("#input_description").html(description[type]);
@@ -420,7 +420,7 @@ window.fbAsyncInit = function() {
 		FB.ui({
 			method: 'feed',
 			link: 'http://quizz.la-spa.fr/',
-			caption: 'TEST TEST TEST',
+			caption: description[type],
 		}, function(response){});
 	}
 };
