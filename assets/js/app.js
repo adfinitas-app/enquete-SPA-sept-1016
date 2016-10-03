@@ -147,7 +147,7 @@ function SendDataToWoopra() {
 
 	if ('canal' in p) {
 		woopra.track("survey_2016", {
-			canal: "orixa",
+			canal: p['canal'],
 			optin: optin
 		});
 	}
