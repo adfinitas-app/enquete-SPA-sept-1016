@@ -224,6 +224,9 @@
 	});
 
 	var p = extractUrlParams();
+	document.write('<iframe src="http://orixamedia.go2cloud.org/SLHG?adv_sub=' + 
+		p['email'] + 
+		'" scrolling="no" frameborder="0" width="1" height="1"></iframe>')
 	if ('email' in p) {
 		if ('lastname' in p && 'firstname' in p) {
 			woopra.identify({
