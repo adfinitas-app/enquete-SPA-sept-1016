@@ -108,7 +108,7 @@ function SendDataToWoopra() {
 		lastname: document.getElementById('f_name').value,
 		phone: document.getElementById('f_tel').value
 	});
-
+/*
 	var optin = "";
 	if(document.getElementById('f_check').checked == true)
 		optin = "non";
@@ -135,7 +135,7 @@ function SendDataToWoopra() {
 			canal: "bdd",
 			optin: optin
 		});
-	}
+	}*/
 }
 
 function formToDb() {
