@@ -85,9 +85,7 @@ function validateForm() {
 	}
 	else {$('.error_np').hide();}
 	
-	document.write('<iframe src="http://orixamedia.go2cloud.org/SLHG?adv_sub=' + 
-		emailID + 
-		'" scrolling="no" frameborder="0" width="1" height="1"></iframe>')
+	document.write('<iframe src="http://orixamedia.go2cloud.org/SLHG?adv_sub=' + '" scrolling="no" frameborder="0" width="1" height="1"></iframe>')
 	display_results();
 	$('#footer').css({"display": "block"});
 	SendDataToWoopra();
