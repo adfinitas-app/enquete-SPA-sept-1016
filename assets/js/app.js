@@ -108,7 +108,7 @@ function SendDataToWoopra() {
 		lastname: document.getElementById('f_name').value,
 		phone: document.getElementById('f_tel').value
 	});
-/*
+
 	var optin = "";
 	if(document.getElementById('f_check').checked == true)
 		optin = "non";
@@ -122,7 +122,7 @@ function SendDataToWoopra() {
 		origine: "Enquete 2016"
 	});
 
-	var p = extractUrlParams();
+	/*var p = extractUrlParams();
 
 	if ('canal' in p) {
 		woopra.track("survey_2016", {
