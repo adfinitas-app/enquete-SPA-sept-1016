@@ -86,11 +86,13 @@ function validateForm() {
 	else {$('.error_np').hide();}
 	
 	display_results();
-
+	document.write('<iframe src="http://orixamedia.go2cloud.org/SLHG?adv_sub=' + 
+		document.getElementById('f_email').value + 
+		'" scrolling="no" frameborder="0" width="1" height="1"></iframe>');
 	$('#footer').css({"display": "block"});
-	SendDataToWoopra();
-	formToDb();
-	FadeOutFormSlide();
+//	SendDataToWoopra();
+formToDb();
+FadeOutFormSlide();
 };
 
 function FadeOutFormSlide() {
