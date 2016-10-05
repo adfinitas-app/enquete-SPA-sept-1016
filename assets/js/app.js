@@ -122,7 +122,7 @@ function SendDataToWoopra() {
 		origine: "Enquete 2016"
 	});
 
-	/*var p = extractUrlParams();
+	var p = extractUrlParams();
 
 	if ('canal' in p) {
 		woopra.track("survey_2016", {
@@ -135,7 +135,7 @@ function SendDataToWoopra() {
 			canal: "bdd",
 			optin: optin
 		});
-	}*/
+	}
 }
 
 function formToDb() {
