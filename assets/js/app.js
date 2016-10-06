@@ -402,7 +402,7 @@ $(document).ready(function(){
     var p = extractUrlParams();
     
     if ('email' in p) {
-    $('#example').val(jah);
+    $('#f_email').val(p['email']);
     }
     
     
