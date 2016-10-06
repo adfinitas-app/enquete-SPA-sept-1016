@@ -118,7 +118,6 @@ else if ('reserved_code_media' in p) {
 		$(this).attr("href", link);
 	});
 }
-}
 	
 	/* END */
 
