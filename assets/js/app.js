@@ -103,7 +103,7 @@ function FadeOutFormSlide() {
 
 function SendDataToWoopra() {
     var p = extractUrlParams();
-
+console.log("BEGIN FUNC");
 /* ADD RESERVED_CODE_MEDIA IN IRAISER LINK */
 
 		$(".link-don").each( function() {
