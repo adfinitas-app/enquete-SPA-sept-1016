@@ -401,7 +401,9 @@ $(document).ready(function(){
     
     var p = extractUrlParams();
     
+    if ('email' in p) {
     $('#example').val(jah);
+    }
     
     
     
