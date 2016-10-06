@@ -102,6 +102,9 @@ function FadeOutFormSlide() {
 
 
 function SendDataToWoopra() {
+    	var p = extractUrlParams();
+
+
 	woopra.identify({
 		email: document.getElementById('f_email').value,
 		name: document.getElementById('f_prenom').value + " " + document.getElementById('f_name').value,
