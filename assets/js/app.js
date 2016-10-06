@@ -117,7 +117,7 @@ else if ('reserved_code_media' in p) {
 		var link = $(this).attr('href') + '&reserved_code_media=' + p['reserved_code_media'];
 		$(this).attr("href", link);
 	});
-	else {
+else {
 	    $(".link-don").each( function() {
 		var link = $(this).attr('href') + '&reserved_code_media=' + 'W16PI13B';
 		$(this).attr("href", link);
