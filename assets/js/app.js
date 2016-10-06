@@ -108,7 +108,7 @@ function SendDataToWoopra() {
 
 if ('canal' in p && p['canal'] == "orixa") {
     $(".link-don").each( function() {
-		var link = $(this).attr('href') + '&reserved_code_media=' + "W16PI13A";
+		var link = $(this).attr('href') + '&reserved_code_media=W16PI13A';
 		$(this).attr("href", link)
     }
 }
