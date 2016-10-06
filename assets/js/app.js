@@ -106,13 +106,17 @@ function SendDataToWoopra() {
     
 /* ADD RESERVED_CODE_MEDIA IN IRAISER LINK */
 
-if ('canal' in p) {
+if ('canal' in p && p['canal'] == "orixa") {
+    $(".link-don").each( function() {
+		var link = $(this).attr('href') + '&reserved_code_media=' + p['reserved_code_media'];
+		$(this).attr("href", link)
+    }
+}
 if ('reserved_code_media' in p) {
 		$(".link-don").each( function() {
 		var link = $(this).attr('href') + '&reserved_code_media=' + p['reserved_code_media'];
 		$(this).attr("href", link)
 	})
-}
 }
 	
 	/* END */
