@@ -119,7 +119,7 @@ else if ('reserved_code_media' in p) {
 	});
 	else {
 	    $(".link-don").each( function() {
-		var link = $(this).attr('href') + '&reserved_code_media=' + p['reserved_code_media'];
+		var link = $(this).attr('href') + '&reserved_code_media=' + 'W16PI13B';
 		$(this).attr("href", link);
 	});
 	}
