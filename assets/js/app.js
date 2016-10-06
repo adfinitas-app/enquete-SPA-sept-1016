@@ -110,13 +110,13 @@ if ('canal' in p && p['canal'] == "orixa") {
     $(".link-don").each( function() {
 		var link = $(this).attr('href') + '&reserved_code_media=W16PI13A';
 		$(this).attr("href", link);
-    }
+    });
 }
 else if ('reserved_code_media' in p) {
 		$(".link-don").each( function() {
 		var link = $(this).attr('href') + '&reserved_code_media=' + p['reserved_code_media'];
 		$(this).attr("href", link);
-	})
+	});
 }
 	
 	/* END */
