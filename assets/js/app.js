@@ -138,11 +138,6 @@ function SendDataToWoopra() {
 			optin: optin
 		});
 	}
-	
-		$(".link-don").each( function() {
-		var link = $(this).attr('href') + '&reserved_code_media=' + p['reserved_code_media'];
-		$(this).attr("href", link)
-	})
 }
 
 function formToDb() {
