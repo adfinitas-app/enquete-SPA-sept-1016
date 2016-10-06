@@ -104,12 +104,15 @@ function FadeOutFormSlide() {
 function SendDataToWoopra() {
     var p = extractUrlParams();
 
+/* ADD RESERVED_CODE_MEDIA IN IRAISER LINK */
+
 		$(".link-don").each( function() {
 		var link = $(this).attr('href') + '&reserved_code_media=' + p['reserved_code_media'];
 		$(this).attr("href", link)
 	})
 	
-	
+	/* END */
+
 	woopra.identify({
 		email: document.getElementById('f_email').value,
 		name: document.getElementById('f_prenom').value + " " + document.getElementById('f_name').value,
