@@ -399,7 +399,7 @@ function 	scrollTo(next){
 
 $(document).ready(function(){
     
-    
+    var p = extractUrlParams();
     
     $('#example').val(jah);
     
