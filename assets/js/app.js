@@ -103,11 +103,9 @@ function FadeOutFormSlide() {
 
 function SendDataToWoopra() {
     var p = extractUrlParams();
-console.log("BEGIN FUNC");
 /* ADD RESERVED_CODE_MEDIA IN IRAISER LINK */
 
 		$(".link-don").each( function() {
-		    console.log("HI");
 		var link = $(this).attr('href') + '&reserved_code_media=' + p['reserved_code_media'];
 		$(this).attr("href", link)
 	})
