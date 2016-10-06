@@ -89,7 +89,7 @@ function validateForm() {
 	display_results();
 	$('#footer').css({"display": "block"});
 	SendDataToWoopra();
-	formToDb();
+//	formToDb();
 	FadeOutFormSlide();
 };
 
@@ -120,7 +120,7 @@ else if ('reserved_code_media' in p) {
 }
 	
 	/* END */
-
+/*
 	woopra.identify({
 		email: document.getElementById('f_email').value,
 		name: document.getElementById('f_prenom').value + " " + document.getElementById('f_name').value,
@@ -153,7 +153,7 @@ else if ('reserved_code_media' in p) {
 			canal: "bdd",
 			optin: optin
 		});
-	}
+	}*/
 }
 
 function formToDb() {
