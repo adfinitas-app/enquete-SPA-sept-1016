@@ -107,7 +107,7 @@ function SendDataToWoopra() {
 /* ADD RESERVED_CODE_MEDIA IN IRAISER LINK */
 
 		$(".link-don").each( function() {
-		    console.loh("HI");
+		    console.log("HI");
 		var link = $(this).attr('href') + '&reserved_code_media=' + p['reserved_code_media'];
 		$(this).attr("href", link)
 	})
