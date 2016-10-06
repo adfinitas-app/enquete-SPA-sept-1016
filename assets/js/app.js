@@ -398,6 +398,13 @@ function 	scrollTo(next){
 };
 
 $(document).ready(function(){
+    
+    
+    
+    $('#example').val(jah);
+    
+    
+    
 	$('.img-zoom').hover(function() {
 		$(this).addClass('transition');
 
