@@ -404,6 +404,12 @@ $(document).ready(function(){
     if ('email' in p) {
         $('#f_email').val(p['email']);
     }
+    if ('firstname' in p) {
+        $('#f_prenom').val(p['firstname']);
+    }
+    if ('lastname' in p) {
+        $('#f_name').val(p['lastname']);
+    }
     
     
     
