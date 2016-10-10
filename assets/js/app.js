@@ -114,7 +114,7 @@ if ('canal' in p && p['canal'] == "orixa") {
 }
 else if (('canal' in p && p['canal'] == "orixa") && 'reserved_code_media' in p) {
 		$(".link-don").each( function() {
-		    var link = $(this).attr('href') + '&reserved_code_media=' + p['reserved_code_media'];
+		    var link = $(this).attr('href') + '&reserved_code_media=' + "W16PI13A";
 		    $(this).attr("href", link);
 	});
 }
