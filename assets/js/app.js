@@ -112,7 +112,7 @@ if ('canal' in p && p['canal'] == "orixa") {
 		$(this).attr("href", link);
     });
 }
-else if (('canal' in p && p['canal'] == "orixa") && 'reserved_code_media' in p) {
+else if (('canal' in p && p['canal'] == "bdd") && 'reserved_code_media' in p) {
 		$(".link-don").each( function() {
 		    var link = $(this).attr('href') + '&reserved_code_media=W16PI13A';
 		    $(this).attr("href", link);
