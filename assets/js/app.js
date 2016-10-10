@@ -89,7 +89,7 @@ function validateForm() {
 	display_results();
 	$('#footer').css({"display": "block"});
 	SendDataToWoopra();
-//	formToDb();
+	formToDb();
 	FadeOutFormSlide();
 };
 
@@ -112,15 +112,15 @@ if ('canal' in p && p['canal'] == "orixa") {
 		$(this).attr("href", link);
     });
 }
-else if (('canal' in p && p['canal'] == "bdd") && 'reserved_code_media' in p) {
+else if ('reserved_code_media' in p) {
 		$(".link-don").each( function() {
-		    var link = $(this).attr('href') + '&reserved_code_media=W16PI13A';
+		    var link = $(this).attr('href') + '&reserved_code_media=' + p['reserved_code_media'];
 		    $(this).attr("href", link);
 	});
 }
 	
 	/* END */
-/*
+
 	woopra.identify({
 		email: document.getElementById('f_email').value,
 		name: document.getElementById('f_prenom').value + " " + document.getElementById('f_name').value,
@@ -153,7 +153,7 @@ else if (('canal' in p && p['canal'] == "bdd") && 'reserved_code_media' in p) {
 			canal: "bdd",
 			optin: optin
 		});
-	}*/
+	}
 }
 
 function formToDb() {
