@@ -101,15 +101,14 @@ function FadeOutFormSlide() {
 }
 
 function assignQuery(query) {
-    console.log("hey!");
     $(".link-don").each( function() {
         console.log($(this).attr('href'));
         $(this).attr("href", $(this).attr("href") + query);
     });
 }
+    console.log("here");
 
 function SendDataToWoopra() {
-    console.log("here");
     var p = extractUrlParams();
     /* ADD RESERVED_CODE_MEDIA IN IRAISER LINK */
     if ('canal' in p && p['canal'] == "orixa") {
