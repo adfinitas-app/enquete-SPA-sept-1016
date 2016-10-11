@@ -106,7 +106,6 @@ function assignQuery(query) {
         $(this).attr("href", $(this).attr("href") + query);
     });
 }
-    console.log("here");
 
 function SendDataToWoopra() {
     var p = extractUrlParams();
