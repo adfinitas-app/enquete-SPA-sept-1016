@@ -100,9 +100,9 @@ function FadeOutFormSlide() {
 	});
 }
 
-function assignLink(link) {
+function assignQuery(query) {
     $(".link-don").each( function() {
-        $(this).attr("href", link);
+        $(this).attr("href", $(this).attr("href") + query);
     });
 }
 
@@ -110,14 +110,11 @@ function SendDataToWoopra() {
     var p = extractUrlParams();
     /* ADD RESERVED_CODE_MEDIA IN IRAISER LINK */
     if ('canal' in p && p['canal'] == "orixa") {
-        var link = $(this).attr('href') + '&reserved_code_media=W16PI13A';
-        assignLink(link);
+        assignQuery('&reserved_code_media=W16PI13A');
     } else if ('reserved_code_media' in p && p['reserved_code_media'].length != 0) {
-        var link = $(this).attr('href') + '&reserved_code_media=' + p['reserved_code_media'];
-        assignLink(link);
+        assignQuery('&reserved_code_media=' + p['reserved_code_media']);
     } else {
-        var link = $(this).attr('href') + '&reserved_code_media=W16PI13B';
-        assignLink(link);
+        assignQuery('&reserved_code_media=W16PI13B');
     }
 	/* END */
 
