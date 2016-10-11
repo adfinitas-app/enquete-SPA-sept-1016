@@ -113,10 +113,18 @@ if ('canal' in p && p['canal'] == "orixa") {
     });
 }
 else if ('reserved_code_media' in p) {
-		$(".link-don").each( function() {
+    if (p['reserved_code_media'].length == 0){
+        $(".link-don").each( function() {
+		var link = $(this).attr('href') + '&reserved_code_media=W16PI13B';
+		$(this).attr("href", link);
+    });
+    };
+	else {
+	    $(".link-don").each( function() {
 		    var link = $(this).attr('href') + '&reserved_code_media=' + p['reserved_code_media'];
 		    $(this).attr("href", link);
 	});
+	};
 }
 	
 	/* END */
