@@ -101,9 +101,9 @@ function FadeOutFormSlide() {
 }
 
 function assignLink(link) {
-	    $(".link-don").each( function() {
-	        $(this).attr("href", link);
-	    });
+    $(".link-don").each( function() {
+        $(this).attr("href", link);
+    });
 }
 
 function SendDataToWoopra() {
