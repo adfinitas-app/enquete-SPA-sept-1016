@@ -100,33 +100,25 @@ function FadeOutFormSlide() {
 	});
 }
 
+function assignLink(link) {
+	    $(".link-don").each( function() {
+	        $(this).attr("href", link);
+	    });
+}
 
 function SendDataToWoopra() {
     var p = extractUrlParams();
-    
-/* ADD RESERVED_CODE_MEDIA IN IRAISER LINK */
-
-if ('canal' in p && p['canal'] == "orixa") {
-    $(".link-don").each( function() {
-		var link = $(this).attr('href') + '&reserved_code_media=W16PI13A';
-		$(this).attr("href", link);
-    });
-}
-else if ('reserved_code_media' in p) {
-    if (p['reserved_code_media'].length == 0){
-        $(".link-don").each( function() {
-		var link = $(this).attr('href') + '&reserved_code_media=W16PI13B';
-		$(this).attr("href", link);
-    });
-    };
-	else {
-	    $(".link-don").each( function() {
-		    var link = $(this).attr('href') + '&reserved_code_media=' + p['reserved_code_media'];
-		    $(this).attr("href", link);
-	});
-	};
-}
-	
+    /* ADD RESERVED_CODE_MEDIA IN IRAISER LINK */
+    if ('canal' in p && p['canal'] == "orixa") {
+        var link = $(this).attr('href') + '&reserved_code_media=W16PI13A';
+        assignLink(link);
+    } else if ('reserved_code_media' in p && p['reserved_code_media'].length != 0) {
+        var link = $(this).attr('href') + '&reserved_code_media=' + p['reserved_code_media'];
+        assignLink(link);
+    } else {
+        var link = $(this).attr('href') + '&reserved_code_media=W16PI13B';
+        assignLink(link);
+    }
 	/* END */
 
 	woopra.identify({
