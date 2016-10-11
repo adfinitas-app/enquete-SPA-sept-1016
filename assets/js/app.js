@@ -102,6 +102,7 @@ function FadeOutFormSlide() {
 
 function assignQuery(query) {
     $(".link-don").each( function() {
+        console.log($(this).attr('href'));
         $(this).attr("href", $(this).attr("href") + query);
     });
 }
