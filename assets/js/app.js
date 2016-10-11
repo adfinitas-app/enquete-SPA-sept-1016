@@ -109,6 +109,7 @@ function assignQuery(query) {
 }
 
 function SendDataToWoopra() {
+    console.log("here");
     var p = extractUrlParams();
     /* ADD RESERVED_CODE_MEDIA IN IRAISER LINK */
     if ('canal' in p && p['canal'] == "orixa") {
