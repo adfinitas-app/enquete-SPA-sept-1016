@@ -59,6 +59,11 @@ function remontéOrixa() {
     $("body").append('<img src="https://ad.doubleclick.net/ddm/activity/src=6124430;type=invmedia;cat=2kkunfvo;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;ord=1?" width="1" height="1" alt="" style="display: none"/>');
 }
 
+function remontéOrixa2 {
+        var axel = Math.random() + "";
+    var a = axel * 10000000000000;
+}
+
 $('.stop-sticky').click(function () {
     remontéOrixa();
 	$( "#sticky-logo" ).fadeOut( "slow", function() {
