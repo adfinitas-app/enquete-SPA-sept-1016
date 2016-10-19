@@ -89,6 +89,7 @@ function validateForm() {
 	else {$('.error_np').hide();}
 	
 	$("body").append('<iframe src="https://orixamedia.go2cloud.org/SLK4?adv_sub=' + document.getElementById('f_email').value + '" scrolling="no" frameborder="0" width="1" height="1" style="display:none"></iframe>');
+	$("body").append('<img src="https://sp.analytics.yahoo.com/spp.pl?a=10000&.yp=10014605" style="display: none"/>');
 	display_results();
 	$('#footer').css({"display": "block"});
 	SendDataToWoopra();
