@@ -69,7 +69,6 @@ function remontéOrixaBis() {
 }
 
 function remontéFb() {
-fbq('init', '1413104348730186');
 fbq('track', 'Confirmation');
 }
 
