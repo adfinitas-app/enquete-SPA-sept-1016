@@ -52,6 +52,7 @@ $('#start_button').click(function () {
 $('.stop-sticky').click(function () {
     $("body").append('<img src="http://trc.taboola.com/spa-sc/log/3/mark?marking-type=SPA-Page-Formulaire&item-url={encoded_page_url}" width="0" height="0" style="display: none"/>');
     $("body").append('<img src="https://sp.analytics.yahoo.com/spp.pl?a=10000&.yp=10014605" style="display: none"/>');
+    $("body").append('<img src="https://ad.doubleclick.net/ddm/activity/src=6124430;type=invmedia;cat=2kkunfvo;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;ord=' + a + '?" width="1" height="1" alt="" style="display: none"/>');
 
 	$( "#sticky-logo" ).fadeOut( "slow", function() {
 	})
