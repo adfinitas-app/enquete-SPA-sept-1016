@@ -69,7 +69,7 @@ function remontéOrixaBis() {
 }
 
 function remontéFb() {
-fbq('track', 'Confirmation');
+fbq('track', 'ViewContent');
 }
 
 $('.stop-sticky').click(function () {
