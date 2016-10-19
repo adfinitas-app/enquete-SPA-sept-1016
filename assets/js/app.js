@@ -59,24 +59,6 @@ function remontéOrixa() {
     $("body").append('<img src="https://ad.doubleclick.net/ddm/activity/src=6124430;type=invmedia;cat=2kkunfvo;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;ord=1?" width="1" height="1" alt="" style="display: none"/>');
 }
 
-<!--
-Start of DoubleClick Floodlight Tag: Please do not remove
-Activity name of this tag: La-spa.fr Quizz Page de remerciement
-URL of the webpage where the tag is expected to be placed: http://la-spa.fr
-This tag must be placed between the <body> and </body> tags, as close as possible to the opening tag.
-Creation Date: 10/13/2016
--->
-<script type="text/javascript">
-var axel = Math.random() + "";
-var a = axel * 10000000000000;
-document.write('');
-</script>
-<noscript>
-
-</noscript>
-<!-- End of DoubleClick Floodlight Tag: Please do not remove -->
-
-
 function remontéOrixaBis {
     var axel = Math.random() + "";
     var a = axel * 10000000000000;
@@ -84,8 +66,10 @@ function remontéOrixaBis {
      $("body").append('<img src="https://sp.analytics.yahoo.com/spp.pl?a=10000&.yp=10014605" style="display: none"/>');
     $("body").append('<img src="https://ad.doubleclick.net/ddm/activity/src=6124430;type=invmedia;cat=up7mzyyq;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;ord=' + a + '?" width="1" height="1" alt="" style="display: none"/>');
      $("body").append('<img src="https://ad.doubleclick.net/ddm/activity/src=6124430;type=invmedia;cat=up7mzyyq;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;ord=1?" width="1" height="1" alt="" style="display: none"/>');
+}
 
-
+function remontéFb() {
+    
 }
 
 $('.stop-sticky').click(function () {
@@ -129,6 +113,7 @@ function validateForm() {
 	$('#footer').css({"display": "block"});
 	SendDataToWoopra();
 	remontéOrixaBis();
+	remontéFb();
 	formToDb();
 	FadeOutFormSlide();
 };
